@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const holes = document.querySelectorAll('.hole');
 
     function getHole(index) {
-        return document.getElementById(`hole${index}`);
+        return document.getElementById('hole${index}');
     }
 
     function whackMole(e) {
@@ -16,9 +16,9 @@ document.addEventListener('DOMContentLoaded', function () {
             lostDisplay.textContent = ++misses;
         }
 
-        if (score === 10) {
+        if (score === 100) {
             endGame('Победа! Вы победили кротов!');
-        } else if (misses === 5) {
+        } else if (misses === 50) {
             endGame('Игра окончена! Вы проиграли.');
         }
     }
