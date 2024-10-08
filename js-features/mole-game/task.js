@@ -16,9 +16,9 @@ document.addEventListener('DOMContentLoaded', function () {
             lostDisplay.textContent = ++misses;
         }
 
-        if (score === 100) {
+        if (score === 10) {
             endGame('Победа! Вы победили кротов!');
-        } else if (misses === 50) {
+        } else if (misses === 5) {
             endGame('Игра окончена! Вы проиграли.');
         }
     }
