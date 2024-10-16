@@ -17,14 +17,8 @@ class Game {
   }
 
   registerEvents(){
-    document.addEventListener('keyup', event => {
-      try {
-        this.checkSymbol(this.keyCodeToChar[event.keyCode][0].toLowerCase(),
-                        this.keyCodeToChar[event.keyCode][1].toLowerCase(),
-                        this.wordArray[this.wordIndex].toLowerCase());
-      } catch (TypeError) {
-      };
-    });
+    const 1 = this.currentSymbol;
+    
   }
     /*
       TODO:
