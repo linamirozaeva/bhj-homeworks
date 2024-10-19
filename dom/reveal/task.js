@@ -1,16 +1,29 @@
-const reveals = document.querySelectorAll('.reveal');
+const reveals = Array.from(document.querySelectorAll('.reveal'));
 
 window.addEventListener('scroll', function(){
-    reveals.innerHeight;
-    reveals.classList.toggle('reveal_active');
-
-    // const elementHeight = reveals.getBoundingClientRect().height;
-    // const windowHeight = window.innerHeight;
-    // if (elementHeight < windowHeight){
-    //     reveals.classList.toggle('reveal_active');
-    // }
+    for(let i = 0; i < index+1; i++){
+        const rect = reveals[i].getBoundingClientRect();
+        if (rect.top >= 0 && rect.bottom > 0){
+            reveals[i].classList.add('reveal_active');
+        } else {
+            reveals[i].classList.toggle('reveal_active');
+        }
+    }
 });
 isInViewport(reveals);
+
+    // for(let i = 0; i < index + 1; i++){
+    //     const elementHeight = reveals[i].getBoundingClientRect().height;
+    //     const windowHeight = window.innerHeight;
+    //     if (elementHeight < windowHeight){
+    //         reveals[i].classList.toggle('reveal_active');
+    //     }
+    // }
+// });
+// isInViewport(reveals);
+
+
+
 
 // let isInViewport = function(reveals){
 //     const viewportHeight = window.innerHeight;
