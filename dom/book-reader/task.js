@@ -7,10 +7,12 @@ small.addEventListener('click', () => {
     small.classList.add('font-size_active');
     texts.classList.add('font-size_small');
     fontSizes[1].classList.remove('font-size_active');
+    event.preventDefault()
 });
 
 big.addEventListener('click', () => {
     big.classList.add('font-size_active');
     texts.classList.add('font-size_big');
     fontSizes[1].classList.remove('font-size_active');
+    event.preventDefault()
 });
