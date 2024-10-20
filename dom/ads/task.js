@@ -50,7 +50,7 @@
 
 const rotatorCase = Array.from(document.querySelectorAll('.rotator__case'));
 
-function changeText(){
+function changeText(index){
         for(let i = 0; i < index+1; i++){
             rotatorCase[i].classList.add('rotator__case_active');
             rotatorCase[i-1].classList.remove('rotator__case_active');

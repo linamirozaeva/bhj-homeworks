@@ -5,7 +5,7 @@ const dropdownItem = document.querySelectorAll('.dropdown__item');
 dropdownList.classList.remove('dropdown__list_active');
 
 dropdownValue.addEventListener('click', () => {
-    dropdownList.classList.add('dropdown__list_active');
+    dropdownList.classList.toggle('dropdown__list_active');
 });
 
 dropdownItem.forEach((element) => {

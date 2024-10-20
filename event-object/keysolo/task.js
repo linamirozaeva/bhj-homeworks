@@ -17,16 +17,16 @@ class Game {
   }
 
   registerEvents(){
-    window.addEventListener('keyup', e => {
-      const symbol = this.currentSymbol.textContent().toLowerCase();
+    this.wordElement.addEventListener('keyup', e => {
+      const symbol = this.currentSymbol.toLowerCase();
       const input = e.key.toLowerCase();
 
-      const match = symbol === input;
+      const match = symbol == input;
 
-      if (!match) {
-        return this.fail();
+      if (match) {
+        this.success();
       } else {
-        return this.success();
+        this.fail();
       }
     });
   }
