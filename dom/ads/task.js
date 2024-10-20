@@ -1,60 +1,19 @@
-// const rotatorCases = Array.from(document.querySelectorAll('.rotator__case'));
-// let counter = 0;
-
-// function rotatorCaseActive(){
-//     for (let i = 0; i < rotatorCases.length; i++){
-//         rotatorCases[i].classsList.remove('rotator__case_active');
-//     }
-//     rotatorCases[counter].classsList.add('rotator__case_active');
-//     if (counter + 1 == rotatorCases.length){
-//         counter = 0;
-//     } else {
-//         counter++;
-//     }
-// }
-
-// setInterval(rotatorCaseActive, 100);
-
-
-// const cases = [...document.querySelectorAll('.rotator__case')];
-// const activeCaseClass = 'rotator__case_active';
-
-// let currentIndex = cases.findIndex(item => item.classList.contains(activeCaseClass));
-
-// const getNextIndex = () => currentIndex === cases.length - 1 ? 0 : currentIndex + 1;
-
-// const toggleNextCase = () => {
-//   const currentCase = cases[currentIndex];
-  
-//   const nextIndex = getNextIndex();
-//   const nextCase = cases[nextIndex];
-  
-//   currentCase.classList.remove(activeCaseClass);
-//   nextCase.classList.add(activeCaseClass);
-//   nextCase.style.color = nextCase.dataset.color;
-  
-//   currentIndex = nextIndex;
-  
-//   scheduleCase(nextIndex);
-// }
-
-// const scheduleCase = index => {
-//   const item = cases[index];
-  
-//   const speed = +item.dataset.speed;
-//   setTimeout(toggleNextCase, speed);
-// }
-
-// scheduleCase(getNextIndex());
-
-
 const rotatorCase = Array.from(document.querySelectorAll('.rotator__case'));
+let i = 0;
 
-function changeText(index){
-        for(let i = 0; i < index+1; i++){
-            rotatorCase[i].classList.add('rotator__case_active');
-            rotatorCase[i-1].classList.remove('rotator__case_active');
+function changeText(){
+        if (i == rotatorCase.length){
+            i = 0;
         }
+        i++;
+        rotatorCase[i-1].classList.toggle('rotator__case_active');
+        rotatorCase[i].classList.toggle('rotator__case_active');
+        // я не понимаю, почему цикл запускается по новой с активным классом первого элемента. 
+        // и красиво все работает через раз выполнения цикла. 
+        // в консоли не читается 10 строка, а именно classList.
+        // почему так, не понимаю...
+        // я уже пробовала всячески менять местами строки кода, не особо помогает.
+        // сейчас самый относительно правильно работающий код 
 }
 
 setInterval(changeText, 1000);
