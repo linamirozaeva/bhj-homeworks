@@ -10,14 +10,3 @@ window.addEventListener('scroll', function(){
         }
     }
 });
-// isInViewport(reveals);
-
-    // for(let i = 0; i < index + 1; i++){
-    //     const elementHeight = reveals[i].getBoundingClientRect().height;
-    //     const windowHeight = window.innerHeight;
-    //     if (elementHeight < windowHeight){
-    //         reveals[i].classList.toggle('reveal_active');
-    //     }
-    // }
-// });
-// isInViewport(reveals);
