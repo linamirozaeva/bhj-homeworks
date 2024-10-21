@@ -16,20 +16,13 @@ class Game {
     this.lossElement.textContent = 0;
   }
 
-  registerEvents(){
-    this.wordElement.addEventListener('keyup', e => {
-      const symbol = this.currentSymbol.toLowerCase();
-      const input = e.key.toLowerCase();
-
-      const match = symbol == input;
-
-      if (match) {
-        this.success();
-      } else {
-        this.fail();
-      }
+  registerEvents() {
+    document.addEventListener('keyup', (e) => {
+    if (e.key === 'Control' || e.key === 'Alt' || e.key === 'Shift') return;
+    e.key === this.currentSymbol.innerHTML ? this.success() : this.fail();
     });
   }
+
     /*
       TODO:
       Написать обработчик события, который откликается
